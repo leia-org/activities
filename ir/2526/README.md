@@ -39,11 +39,13 @@ Remember, you must fill out the following form at the end of the session:
 # Session 2 (27/11/2025)
 
 Spanish: [Final problem 1, material for clients]()
+
 English: [Final problem 1, material for clients]()
 
 ## REMEMBER YOU MUST EXCHANGE ROLES BETWEEN EXERCISES!
 
 English: [Final problem 2, material for clients]()
+
 Spanish: [Final problem 2, material for clients]()
 
 
