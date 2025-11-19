@@ -1,4 +1,4 @@
-# Session 1
+# Session 1 (20/11/2025)
 
 ## Transcription exercise
 
@@ -22,7 +22,7 @@
 [LEIA / Experimental group problem 2]()
 
 
-# Session 2
+# Session 2 (27/11/2025)
 
 [Final problem 1, material for clients]()
 ## REMEMBER YOU MUST EXCHANGE ROLES BETWEEN EXERCISES!
