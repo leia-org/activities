@@ -8,7 +8,7 @@
   </strong>
 </summary>
 
-#### [Instructions](ir/2526/README.MD)
+#### [Instructions](ir/2526/README.md)
 
 **Experimenters**: José Antonio Parejo, Pablo Fernández, Amador Durán
 
