@@ -1,8 +1,6 @@
 # Activities
 
 ## Current:
-<details>
-
 
 ## University of Sevilla - Ingeniería de Requisitos / Requierements Engineering - 2025-2026
 
