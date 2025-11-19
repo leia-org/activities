@@ -1,68 +1,109 @@
+## Selecciona el idioma / Language selection
+
+<details>
+<summary><strong>Español</strong></summary>
+
 # Session 1 (20/11/2025)
 
-## Initial Transcription exercise
+## Ejercicio inicial de transcripción
 
-[Exercise in Spanish](https://workbench.leia.ovh?code=RMI4QDERB2JZD1F1U)
+- [Ejercicio en español](https://workbench.leia.ovh?code=RMI4QDERB2JZD1F1U)
 
-[Exercise in English](https://workbench.leia.ovh?code=RMI4T98QD7BUY78UP)
+**Formulario obligatorio al finalizar:**
 
-Remember, you must fill out the following form at the end of the session:
+- [Formulario en español](https://forms.gle/FdXkP5cpu2pDrFC19)
 
-[Form in Spanish](https://forms.gle/FdXkP5cpu2pDrFC19)
+---
 
-[Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
+# Tarea para casa
 
+## Problema 1
+
+### Grupo de control / Transcripción
+- [Problema 1 — Grupo de control]()
+
+### Grupo experimental / LEIA
+- [Problema 1 — Grupo experimental]()
+
+**Formulario obligatorio tras resolver el ejercicio:**
+
+- [Formulario en español](https://forms.gle/FdXkP5cpu2pDrFC19)
+
+---
+
+## Problema 2
+
+### Grupo de control / Transcripción
+- [Problema 2 — Grupo de control]()
+
+### Grupo experimental / LEIA
+- [Problema 2 — Grupo experimental]()
+
+**Formulario obligatorio tras resolver el ejercicio:**
+
+- [Formulario en español](https://forms.gle/FdXkP5cpu2pDrFC19)
+
+---
+
+# Session 2 (27/11/2025)
+
+- [Problema final 1 — Material para clientes]()
+- **Recuerda cambiar los roles entre ejercicios**
+- [Problema final 2 — Material para clientes]()
+
+</details>
+
+---
+
+<details>
+<summary><strong>English</strong></summary>
+
+# Session 1 (20/11/2025)
+
+## Initial Transcription Exercise
+
+- [Exercise in English](https://workbench.leia.ovh?code=RMI4T98QD7BUY78UP)
+
+**Mandatory form at the end:**
+
+- [Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
+
+---
 
 # Homework
 
 ## Problem 1
 
-### English:
-[Transcripcion / Control group problem 1 in english]()
+### Control Group / Transcription
+- [Problem 1 — Control group]()
 
-[LEIA / Experimental group problem 1 in english]()
+### Experimental Group / LEIA
+- [Problem 1 — Experimental group]()
 
-### Spanish:
-[Transcripcion / Control group problem 1 in spanish]()
+**Mandatory form after completing the exercise:**
 
-[LEIA / Experimental group problem 1 in spanish]()
+- [Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
 
-Remember, you must fill out the following form after solving the exercise:
-
-[Form in Spanish](https://forms.gle/FdXkP5cpu2pDrFC19)
-
-[Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
+---
 
 ## Problem 2
-### English:
-[Transcripcion / Control group problem 2  in english]()
 
-[LEIA / Experimental group problem 2 in english]()
+### Control Group / Transcription
+- [Problem 2 — Control group]()
 
-### Spanish:
-[Transcripcion / Control group problem 2  in spanish]()
+### Experimental Group / LEIA
+- [Problem 2 — Experimental group]()
 
-[LEIA / Experimental group problem 2 in spanish]()
+**Mandatory form after completing the exercise:**
 
-Remember, you must fill out the following form at the end of the session:
+- [Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
 
-[Form in Spanish](https://forms.gle/FdXkP5cpu2pDrFC19)
-
-[Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
-
+---
 
 # Session 2 (27/11/2025)
 
-Spanish: [Final problem 1, material for clients]()
+- [Final problem 1 — Client material]()
+- **Remember to exchange roles between exercises**
+- [Final problem 2 — Client material]()
 
-English: [Final problem 1, material for clients]()
-
-## REMEMBER YOU MUST EXCHANGE ROLES BETWEEN EXERCISES!
-
-Spanish: [Final problem 2, material for clients]()
-
-English: [Final problem 2, material for clients]()
-
-
-
-
+</details>
