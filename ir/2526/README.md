@@ -1,6 +1,6 @@
 ## Selecciona el idioma / Language selection
 
-<details>
+<details markdown="1">
 <summary><strong>Español</strong></summary>
 
 # Session 1 (20/11/2025)
@@ -55,7 +55,7 @@
 
 ---
 
-<details>
+<details markdown="1">
 <summary><strong>English</strong></summary>
 
 # Session 1 (20/11/2025)
