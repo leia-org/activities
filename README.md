@@ -2,11 +2,11 @@
 
 ## Current:
 <details>
-<summary><strong>
-  
-  ### University of Sevilla - Ingeniería de Requisitos / Requierements Engineering - 2025-2026
-
-</strong></summary>
+<summary>
+  <strong>  
+ University of Sevilla - Ingeniería de Requisitos / Requierements Engineering - 2025-2026
+  </strong>
+</summary>
 
 #### [Instructions](ir/2526/README.MD)
 
