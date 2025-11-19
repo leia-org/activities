@@ -16,6 +16,7 @@ Remember, you must fill out the following form at the end of the session:
 # Homework
 
 ## Problem 1
+
 ### English:
 [Transcripcion / Control group problem 1 in english]()
 
@@ -25,6 +26,12 @@ Remember, you must fill out the following form at the end of the session:
 [Transcripcion / Control group problem 1 in spanish]()
 
 [LEIA / Experimental group problem 1 in spanish]()
+
+Remember, you must fill out the following form after solving the exercise:
+
+[Form in Spanish](https://forms.gle/FdXkP5cpu2pDrFC19)
+
+[Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
 
 ## Problem 2
 ### English:
@@ -36,6 +43,12 @@ Remember, you must fill out the following form at the end of the session:
 [Transcripcion / Control group problem 2  in spanish]()
 
 [LEIA / Experimental group problem 2 in spanish]()
+
+Remember, you must fill out the following form at the end of the session:
+
+[Form in Spanish](https://forms.gle/FdXkP5cpu2pDrFC19)
+
+[Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
 
 
 # Session 2 (27/11/2025)
