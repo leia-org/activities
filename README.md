@@ -1,10 +1,14 @@
 # Activities
 
 ## Current:
+<details markdown="1">
+  <summary markdown="1">
+    <strong>
+ University of Sevilla - Ingeniería de Requisitos / Requierements Engineering - 2025-2026
+    </strong>
+ </summary>
 
-## University of Sevilla - Ingeniería de Requisitos / Requierements Engineering - 2025-2026
-
-#### [Instructions](ir/2526/README.md)
+  #### [Instructions](ir/2526/README.md)
 
 **Experimenters**: José Antonio Parejo, Pablo Fernández, Amador Durán
 
@@ -24,3 +28,4 @@
 - For transcription activieties: IR-TR-2511
 - For leia activieties: IR-2511
 
+</details>
