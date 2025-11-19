@@ -3,11 +3,8 @@
 ## Current:
 <details>
 
-<summary>
-  <strong>  
- University of Sevilla - Ingeniería de Requisitos / Requierements Engineering - 2025-2026
-  </strong>
-</summary>
+
+## University of Sevilla - Ingeniería de Requisitos / Requierements Engineering - 2025-2026
 
 #### [Instructions](ir/2526/README.md)
 
@@ -28,7 +25,4 @@
 **Activities/replications Suffixes**:  
 - For transcription activieties: IR-TR-2511
 - For leia activieties: IR-2511
-
-
-</details>
 
