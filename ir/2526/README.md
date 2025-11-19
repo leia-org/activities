@@ -13,18 +13,27 @@ Remember, you must fill out the following form at the end of the session:
 
 # Homework
 
-##Problem 1
+## Problem 1
+### English:
+[Transcripcion / Control group problem 1 in english]()
 
-[Transcripcion / Control group problem 1]()
+[LEIA / Experimental group problem 1 in english]()
 
-[LEIA / Experimental group problem 1]()
+### Spanish:
+[Transcripcion / Control group problem 1 in spanish]()
 
+[LEIA / Experimental group problem 1 in spanish]()
 
-##Problem 2
+## Problem 2
+### English:
+[Transcripcion / Control group problem 2  in english]()
 
-[Transcripcion / Control group problem 2]()
+[LEIA / Experimental group problem 2 in english]()
 
-[LEIA / Experimental group problem 2]()
+### Spanish:
+[Transcripcion / Control group problem 2  in spanish]()
+
+[LEIA / Experimental group problem 2 in spanish]()
 
 
 # Session 2 (27/11/2025)
