@@ -7,14 +7,14 @@
 
 ## Ejercicio inicial de transcripción
 
-- [Ejercicio en español](https://workbench.leia.ovh?code=RMI4QDERB2JZD1F1U)
+- TEXT_CL1: [Ejercicio en español](https://workbench.leia.ovh?code=RMI4QDERB2JZD1F1U)
 
 **Formulario obligatorio al finalizar:**
 
 - [Formulario en español](https://forms.gle/FdXkP5cpu2pDrFC19)
 
 ---
-
+<!--
 # Tarea para casa
 
 ## Problema 1
@@ -50,7 +50,7 @@
 - [Problema final 1 — Material para clientes]()
 - **Recuerda cambiar los roles entre ejercicios**
 - [Problema final 2 — Material para clientes]()
-
+-->
 </details>
 
 ---
@@ -62,14 +62,14 @@
 
 ## Initial Transcription Exercise
 
-- [Exercise in English](https://workbench.leia.ovh?code=RMI4T98QD7BUY78UP)
+- TEXT_CL1 : [Exercise in English](https://workbench.leia.ovh?code=RMI4T98QD7BUY78UP)
 
 **Mandatory form at the end:**
 
 - [Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
 
 ---
-
+<!--
 # Homework
 
 ## Problem 1
@@ -105,5 +105,5 @@
 - [Final problem 1 — Client material]()
 - **Remember to exchange roles between exercises**
 - [Final problem 2 — Client material]()
-
+--!>
 </details>
