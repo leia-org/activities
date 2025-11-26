@@ -122,7 +122,9 @@ Al finalizar:
 4. Haz clic en el recuadro de la reunión o ve a la pestaña **Grabaciones y Transcripciones**.  
 5. En la sección **Transcripción**, haz clic en la flecha de **Descargar** y elige el formato **VTT**.
 
-⚠️ **Importante:** Sube este archivo **sin modificar** a la carpeta de entrega usando el formulario proporcionado.
+⚠️ **Importante:** Sube este archivo **sin modificar** a la carpeta de entrega usando el formulario proporcionado: 
+
+https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=TmhK77WBHEmpjsezG-bEaS_jFm8GXNxMnxNK5BauHChUODFEQTdMWjYxRFpTQ0JLSlJXVVdKWDhHWC4u&Token=7f75197d58a544a185f81dee025ce5be
 
 ---
 
@@ -271,7 +273,9 @@ Verify that the message **"Transcription has started"** appears.
 4. Click on the meeting recap or go to the **Recordings & Transcripts** tab.  
 5. In the **Transcript** section, click the **Download** arrow and choose the **VTT** format.
 
-⚠️ **Important:** Upload this file **without modification** to the submission folder using the provided form.
+⚠️ **Important:** Upload this file **without modification** to the submission folder using the provided form:
+
+https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=TmhK77WBHEmpjsezG-bEaS_jFm8GXNxMnxNK5BauHChUODFEQTdMWjYxRFpTQ0JLSlJXVVdKWDhHWC4u&Token=7f75197d58a544a185f81dee025ce5be
 
 ---
 
