@@ -3,7 +3,8 @@
 <details markdown="1">
 <summary><strong>Español</strong></summary>
 
-# Session 1 (20/11/2025)
+<details markdown="1">
+<summary><strong>Session 1 (20/11/2025)</strong></summary>
 
 ## Ejercicio inicial de transcripción
 
@@ -12,11 +13,10 @@
 **Formulario obligatorio al finalizar:**
 
 - [Formulario en español](https://forms.gle/FdXkP5cpu2pDrFC19)
-
+</details>
 ---
-
-# Tarea para casa
-
+<details markdown="1">
+<summary><strong>Tarea para casa</strong></summary>
 ## Problema 1
 
 ### Grupo de control / Transcripción
@@ -42,10 +42,11 @@
 **Formulario obligatorio tras resolver el ejercicio:**
 
 - [Formulario en español](https://forms.gle/FdXkP5cpu2pDrFC19)
-
+</details>
 ---
+<details markdown="1">
+<summary><strong>Session 2 (27/11/2025)</strong></summary>
 
-# Session 2 (27/11/2025)
 
 # Guía para la realización de la entrevista del Role-Play  
 **Elicitación de Requisitos en MS Teams / Requirements Elicitation in MS Teams**
@@ -148,7 +149,7 @@ Tu tarea: Evaluar el comportamiento del alumno que ha actuado como cliente usand
 - https://forms.gle/4QDnyhZcZagKyCRU7
 
 Una vez evaluado el papel del cliente, debes **prepararte para actuar como cliente** en la siguiente ronda de entrevistas, leyendo el **contexto del ejercicio y su solución**.
-
+</details>
 ---
 
 
