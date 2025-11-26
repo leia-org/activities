@@ -88,6 +88,7 @@ Tu tarea: Crear el entorno de la reunión en la sala de Teams en el canal especi
 2. Arriba a la derecha, haz clic en la flecha junto al botón de la cámara: **"Reunirse" → "Reunirse ahora"**.  
 3. Arranca la reunión y, si tu compañero no entra en unos instantes, invítalo a unirse desde la opción **“Asistentes”**.
 
+![Imagen para crear la reunion](Teams-snapshot1.png)
 ---
 
 # Fase 2: La Elicitación (Role-Play) (30 min)
@@ -98,6 +99,8 @@ Ambos alumnos debéis uniros a la reunión que aparece ahora publicada en el mur
 
 1. Una vez dentro de la sala de Teams, haz clic en el botón **Más (...)** en la barra superior.  
 2. Selecciona **Grabar y transcribir → Iniciar transcripción**.  
+
+![Imagen para grabar la transcripcion la reunion](Teams-snapshot2.png)
 
 **Nota:**  
 - La grabación de vídeo **no** debe activarse.  
@@ -121,6 +124,9 @@ Al finalizar:
 3. Vuelve al Canal de Teams y busca el historial de la reunión finalizada.  
 4. Haz clic en el recuadro de la reunión o ve a la pestaña **Grabaciones y Transcripciones**.  
 5. En la sección **Transcripción**, haz clic en la flecha de **Descargar** y elige el formato **VTT**.
+
+![Imagen para acceder a la transcripcion la reunion](Teams-snapshot3.png)
+![Imagen para descargar la transcripcion la reunion](Teams-snapshot4.png)
 
 ⚠️ **Importante:** Sube este archivo **sin modificar** a la carpeta de entrega usando el formulario proporcionado: 
 
@@ -240,6 +246,7 @@ Your Task: Create the meeting environment in the Teams room in the channel assig
 1. Enter Teams and go to the specific Channel assigned to your group.  
 2. In the top right corner, click the arrow next to the camera icon (**"Meet" → "Start a meeting now"**).  
 3. Start the meeting, and if your partner does not enter in a few moments, invite them to join from the **"People" (Attendees)** option.
+![Imagen para iniciar la reunion](Teams-snapshot1.png)
 
 ---
 
@@ -252,6 +259,7 @@ Both students must now join the meeting posted on the Channel wall.
 1. Once inside the Teams meeting room in the specified channel, click the **More (...)** button on the top toolbar.  
 2. Select **Record and transcribe → Start transcription**.  
 
+![Imagen para generar la transcripcion la reunion](Teams-snapshot2.png)
 **Note:**  
 - Video recording **must not** be activated.  
 - Transcription is **mandatory**.
@@ -272,6 +280,10 @@ Verify that the message **"Transcription has started"** appears.
 3. Return to the Channel in Teams and find the history of the finished meeting.  
 4. Click on the meeting recap or go to the **Recordings & Transcripts** tab.  
 5. In the **Transcript** section, click the **Download** arrow and choose the **VTT** format.
+
+
+![Imagen para acceder a la transcripcion la reunion](Teams-snapshot3.png)
+![Imagen para descargar la transcripcion la reunion](Teams-snapshot4.png)
 
 ⚠️ **Important:** Upload this file **without modification** to the submission folder using the provided form:
 
