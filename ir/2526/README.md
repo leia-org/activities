@@ -4,7 +4,7 @@
 <summary><strong>Español</strong></summary>
 
 <details markdown="1">
-<summary><strong>Session 1 (20/11/2025)</strong></summary>
+<summary><strong>Sesión 1 (20/11/2025)</strong></summary>
 
 ## Ejercicio inicial de transcripción
 
@@ -159,8 +159,8 @@ Una vez evaluado el papel del cliente, debes **prepararte para actuar como clien
 
 <details markdown="1">
 <summary><strong>English</strong></summary>
-
-# Session 1 (20/11/2025)
+<details markdown="1">
+<summary><strong>Session 1 (20/11/2025)</strong></summary>
 
 ## Initial Transcription Exercise
 
@@ -169,10 +169,11 @@ Una vez evaluado el papel del cliente, debes **prepararte para actuar como clien
 **Mandatory form at the end:**
 
 - [Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
-
+</details>
 ---
-<!--
-# Homework
+<details markdown="1">
+<summary><strong>Homework</strong></summary>
+
 
 ## Problem 1
 
@@ -199,13 +200,103 @@ Una vez evaluado el papel del cliente, debes **prepararte para actuar como clien
 **Mandatory form after completing the exercise:**
 
 - [Form in English](https://forms.gle/dMBQ7XUrfvtduXZm8)
+</details>
+---
+<details markdown="1">
+<summary><strong>Session 2 (27/11/2025)</strong></summary>
+# 🇬🇧 ENGLISH VERSION
+
+# Objective and Dynamics
+
+**Objective:** To simulate a requirements elicitation session.  
+**Dynamics:** Pair work.
+
+- **Role A (Requirements Engineer):** Responsible for the technical management of the meeting and the elicitation process.  
+- **Role B (Client):** Responsible for knowing the problem domain.
 
 ---
 
-# Session 2 (27/11/2025)
+# Phase 1: Preparation (5 Minutes)
 
-- [Final problem 1 — Client material]()
-- **Remember to exchange roles between exercises**
-- [Final problem 2 — Client material]()
---!>
+In this phase, each partner performs a different task simultaneously.
+
+## 👤 ROLE: CLIENT
+
+- Your Task: While your partner sets up the Teams meeting room in the specified channel, you must read the **"Context and Solution Proposal"** document provided.  
+- Internalize your role:  
+  - What do you need?  
+  - What are your pain points?  
+- Prepare to answer the engineer's questions based exclusively on the information provided.  
+- You may use the **ambiguous phrases guide** if you want to introduce a certain level of ambiguity in your answers.
+
+## 🛠️ ROLE: REQUIREMENTS ENGINEER
+
+Your Task: Create the meeting environment in the Teams room in the channel assigned to your group.
+
+### Step 1: Create the Meeting in the Channel
+
+1. Enter Teams and go to the specific Channel assigned to your group.  
+2. In the top right corner, click the arrow next to the camera icon (**"Meet" → "Start a meeting now"**).  
+3. Start the meeting, and if your partner does not enter in a few moments, invite them to join from the **"People" (Attendees)** option.
+
+---
+
+# Phase 2: The Elicitation (Role-Play)
+
+Both students must now join the meeting posted on the Channel wall.
+
+### 🔴 CRITICAL ACTION (Requirements Engineer)
+
+1. Once inside the Teams meeting room in the specified channel, click the **More (...)** button on the top toolbar.  
+2. Select **Record and transcribe → Start transcription**.  
+
+**Note:**  
+- Video recording **must not** be activated.  
+- Transcription is **mandatory**.
+
+Verify that the message **"Transcription has started"** appears.
+
+**Start the Role-Play!**
+
+---
+
+# Phase 3: Exporting the Transcript
+
+1. When finished, hang up.  
+2. The Requirements Engineer must **download the evidence** of the completed meeting (the transcript).  
+3. Return to the Channel in Teams and find the history of the finished meeting.  
+4. Click on the meeting recap or go to the **Recordings & Transcripts** tab.  
+5. In the **Transcript** section, click the **Download** arrow and choose the **VTT** format.
+
+⚠️ **Important:** Upload this file **without modification** to the submission folder using the provided form.
+
+---
+
+# Phase 4: Interview Evaluation
+
+In this phase, each partner performs a different task simultaneously.
+
+## 👤 ROLE: CLIENT
+
+Your Task: Evaluate the work carried out by the requirements engineer, assessing the different aspects and identifying common errors, using the interview evaluation form.
+
+Specifically:
+
+1. **Assess the quality of the interview:**  
+   https://forms.gle/X9oUSkYuv8YuyFKp9  
+
+2. **Assess the quality of the solution (UML diagram) provided by the analyst/requirements engineer:**  
+   https://forms.gle/bYBWx6vGfGZDE67Y9  
+
+## 🛠️ ROLE: REQUIREMENTS ENGINEER
+
+Your Task: Evaluate the behaviour of the student who acted as the client using the client evaluation form:
+
+- https://forms.gle/f1ST4oQtP7MtF4bp7
+
+Once the client’s role has been assessed, you must **prepare to act as the client** yourself in the next round of interviews by reading the **context of the exercise and its solution**.
+
+---
+
+</details>
 </details>
