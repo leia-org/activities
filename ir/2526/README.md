@@ -90,7 +90,7 @@ Tu tarea: Crear el entorno de la reunión en la sala de Teams en el canal especi
 
 ---
 
-# Fase 2: La Elicitación (Role-Play)
+# Fase 2: La Elicitación (Role-Play) (30 min)
 
 Ambos alumnos debéis uniros a la reunión que aparece ahora publicada en el muro del Canal.
 
@@ -109,7 +109,7 @@ Verifica que aparece el mensaje: **"Se ha iniciado la transcripción"**.
 
 ---
 
-# Fase 3: Exportación de la Transcripción
+# Fase 3: Exportación de la Transcripción (5 min)
 
 ⚠️ **Importante:**  
 Antes de colgar, el entrevistador/analista/ingeniero de requisitos debe enviar por el chat de la entrevista un mensaje al cliente con el **código Mermaid del diagrama de clases** generado, para que el cliente pueda evaluarlo en la siguiente fase.
@@ -128,7 +128,7 @@ https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=TmhK77WBH
 
 ---
 
-# Fase 4: Evaluación de la entrevista realizada
+# Fase 4: Evaluación de la entrevista realizada (15 min)
 
 En esta fase, cada miembro de la pareja debe realizar una tarea distinta simultáneamente.
 
@@ -243,7 +243,7 @@ Your Task: Create the meeting environment in the Teams room in the channel assig
 
 ---
 
-# Phase 2: The Elicitation (Role-Play)
+# Phase 2: The Elicitation (Role-Play) (30 min)
 
 Both students must now join the meeting posted on the Channel wall.
 
@@ -262,7 +262,7 @@ Verify that the message **"Transcription has started"** appears.
 
 ---
 
-# Phase 3: Exporting the Transcript
+# Phase 3: Exporting the Transcript (5 min)
 
 ⚠️ Important: Before hanging up, the interviewer/analyst/requirements engineer must send the client, via the interview chat, a message containing the Mermaid code of the class diagram they have generated, so that the client can evaluate it in the next phase.
 
@@ -279,7 +279,7 @@ https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=TmhK77WBH
 
 ---
 
-# Phase 4: Interview Evaluation
+# Phase 4: Interview Evaluation (15 min)
 
 In this phase, each partner performs a different task simultaneously.
 
