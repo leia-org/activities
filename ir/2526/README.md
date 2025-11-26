@@ -262,6 +262,9 @@ Verify that the message **"Transcription has started"** appears.
 
 # Phase 3: Exporting the Transcript
 
+⚠️ Important: Before hanging up, the interviewer/analyst/requirements engineer must send the client, via the interview chat, a message containing the Mermaid code of the class diagram they have generated, so that the client can evaluate it in the next phase.
+
+
 1. When finished, hang up.  
 2. The Requirements Engineer must **download the evidence** of the completed meeting (the transcript).  
 3. Return to the Channel in Teams and find the history of the finished meeting.  
