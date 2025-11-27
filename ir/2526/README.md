@@ -163,8 +163,14 @@ Tu tarea: Evaluar el comportamiento del alumno que ha actuado como cliente usand
 - https://forms.gle/4QDnyhZcZagKyCRU7
 
 Una vez evaluado el papel del cliente, debes **prepararte para actuar como cliente** en la siguiente ronda de entrevistas, leyendo el **contexto del ejercicio y su solución**.
+
+Opcionalmente, podéis hacer un ejercicio de una simulación basada en IA de un cliente (en Ingles) aqui:
+ - https://pre.workbench.leia.ovh/?code=RMIHQJPCBQ9388612
+
+
 </details>
 ---
+
 
 
 </details>
@@ -330,6 +336,8 @@ Your Task: Evaluate the behaviour of the student who acted as the client using t
 Once the client’s role has been assessed, you must **prepare to act as the client** yourself in the next round of interviews by reading the **context of the exercise and its solution**.
 
 ---
+Optionally, you can access final activity with a AI-driven simulated client (in English) here: 
+ - https://pre.workbench.leia.ovh/?code=RMIHQJPCBQ9388612
 
 </details>
 </details>
