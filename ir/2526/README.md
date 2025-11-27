@@ -64,8 +64,11 @@
 - **Rol B (Cliente):** Responsable de conocer el dominio del problema.
 
 ---
-**Formulario de onboarding**: https://forms.gle/3NQy3b7cn7P9CNg47
-**Emparejamiento**: https://docs.google.com/spreadsheets/d/1FKn5mhBjQzboKRruXK_gg7kxoU2teVTCCGIAbfdpkC0/edit?usp=sharing
+**Formulario de onboarding**: 
+  - https://forms.gle/3NQy3b7cn7P9CNg47
+
+**Emparejamiento**: 
+  - https://docs.google.com/spreadsheets/d/1FKn5mhBjQzboKRruXK_gg7kxoU2teVTCCGIAbfdpkC0/edit?usp=sharing
 
 ---
 # Fase 1: Preparación (5 Minutos)
@@ -227,8 +230,12 @@ Una vez evaluado el papel del cliente, debes **prepararte para actuar como clien
 
 ---
 
-**Onboarding**: https://forms.gle/3NQy3b7cn7P9CNg47
-**Matchmaking**: https://docs.google.com/spreadsheets/d/1FKn5mhBjQzboKRruXK_gg7kxoU2teVTCCGIAbfdpkC0/edit?usp=sharing
+**Onboarding**: 
+  - https://forms.gle/3NQy3b7cn7P9CNg47
+
+**Matchmaking**:
+  - https://docs.google.com/spreadsheets/d/1FKn5mhBjQzboKRruXK_gg7kxoU2teVTCCGIAbfdpkC0/edit?usp=sharing
+
 ---
 
 # Phase 1: Preparation (5 Minutes)
@@ -294,7 +301,7 @@ Verify that the message **"Transcription has started"** appears.
 
 ⚠️ **Important:** Upload this file **without modification** to the submission folder using the provided form:
 
-https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=TmhK77WBHEmpjsezG-bEaS_jFm8GXNxMnxNK5BauHChUODFEQTdMWjYxRFpTQ0JLSlJXVVdKWDhHWC4u&Token=7f75197d58a544a185f81dee025ce5be
+  - https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=TmhK77WBHEmpjsezG-bEaS_jFm8GXNxMnxNK5BauHChUODFEQTdMWjYxRFpTQ0JLSlJXVVdKWDhHWC4u&Token=7f75197d58a544a185f81dee025ce5be
 
 ---
 
