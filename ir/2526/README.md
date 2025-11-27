@@ -129,7 +129,7 @@ Al finalizar:
 2. El Ingeniero de Requisitos debe **descargar la evidencia** de la reunión (la transcripción).  
 3. Vuelve al Canal de Teams y busca el historial de la reunión finalizada.  
 4. Haz clic en el recuadro de la reunión o ve a la pestaña **Grabaciones y Transcripciones**.  
-5. En la sección **Transcripción**, haz clic en la flecha de **Descargar** y elige el formato **VTT**.
+5. En la sección **Transcripción**, haz clic en la flecha de **Descargar** y elige el formato **Word**.
 
 ![Imagen para acceder a la transcripcion la reunion](Teams-snapshot3.png)
 ![Imagen para descargar la transcripcion la reunion](Teams-snapshot4.png)
@@ -293,7 +293,7 @@ Verify that the message **"Transcription has started"** appears.
 2. The Requirements Engineer must **download the evidence** of the completed meeting (the transcript).  
 3. Return to the Channel in Teams and find the history of the finished meeting.  
 4. Click on the meeting recap or go to the **Recordings & Transcripts** tab.  
-5. In the **Transcript** section, click the **Download** arrow and choose the **VTT** format.
+5. In the **Transcript** section, click the **Download** arrow and choose the **Word** format.
 
 
 ![Imagen para acceder a la transcripcion la reunion](Teams-snapshot3.png)
