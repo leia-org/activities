@@ -136,7 +136,7 @@ Al finalizar:
 
 ⚠️ **Importante:** Sube este archivo **sin modificar** a la carpeta de entrega usando el formulario proporcionado: 
 
-https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=TmhK77WBHEmpjsezG-bEaS_jFm8GXNxMnxNK5BauHChUODFEQTdMWjYxRFpTQ0JLSlJXVVdKWDhHWC4u&Token=7f75197d58a544a185f81dee025ce5be
+[https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=TmhK77WBHEmpjsezG-bEaS_jFm8GXNxMnxNK5BauHChUODFEQTdMWjYxRFpTQ0JLSlJXVVdKWDhHWC4u&Token=7f75197d58a544a185f81dee025ce5be](https://forms.office.com/e/z85Mg35R0z)
 
 ---
 
@@ -301,7 +301,7 @@ Verify that the message **"Transcription has started"** appears.
 
 ⚠️ **Important:** Upload this file **without modification** to the submission folder using the provided form:
 
-  - https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=TmhK77WBHEmpjsezG-bEaS_jFm8GXNxMnxNK5BauHChUODFEQTdMWjYxRFpTQ0JLSlJXVVdKWDhHWC4u&Token=7f75197d58a544a185f81dee025ce5be
+  - [https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=TmhK77WBHEmpjsezG-bEaS_jFm8GXNxMnxNK5BauHChUODFEQTdMWjYxRFpTQ0JLSlJXVVdKWDhHWC4u&Token=7f75197d58a544a185f81dee025ce5be](https://forms.office.com/e/z85Mg35R0z)
 
 ---
 
