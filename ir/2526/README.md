@@ -64,7 +64,10 @@
 - **Rol B (Cliente):** Responsable de conocer el dominio del problema.
 
 ---
+**Formulario de onboarding**: https://forms.gle/3NQy3b7cn7P9CNg47
+**Emparejamiento**: https://docs.google.com/spreadsheets/d/1FKn5mhBjQzboKRruXK_gg7kxoU2teVTCCGIAbfdpkC0/edit?usp=sharing
 
+---
 # Fase 1: Preparación (5 Minutos)
 
 En esta fase, cada miembro de la pareja debe realizar una tarea distinta simultáneamente.
@@ -222,6 +225,10 @@ Una vez evaluado el papel del cliente, debes **prepararte para actuar como clien
 - **Role A (Requirements Engineer):** Responsible for the technical management of the meeting and the elicitation process.  
 - **Role B (Client):** Responsible for knowing the problem domain.
 
+---
+
+**Onboarding**: https://forms.gle/3NQy3b7cn7P9CNg47
+**Matchmaking**: https://docs.google.com/spreadsheets/d/1FKn5mhBjQzboKRruXK_gg7kxoU2teVTCCGIAbfdpkC0/edit?usp=sharing
 ---
 
 # Phase 1: Preparation (5 Minutes)
