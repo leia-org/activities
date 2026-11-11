@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Worksheet for the three jugs problem: pour water between the jugs, keep the list of your pours and generate the text for the workbench solution editor.">
+<title>Three jugs | LEIA activity</title>
+<link rel="icon" href="data:,">
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#f3f5f9;
+  --surface:#ffffff;
+  --surface-2:#f5f7fb;
+  --text:#101828;
+  --muted:#586174;
+  --border:#d9dfe9;
+  --accent:#2563eb;
+  --accent-strong:#1d4ed8;
+  --accent-soft:#e7eefe;
+  --on-accent:#ffffff;
+  --danger:#b42318;
+  --danger-soft:#fdeceb;
+  --water:#3b82f6;
+  --glass:#8b98ad;
+  --glass-bg:#eef2f8;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 10px 24px rgba(16,24,40,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0c1320;
+    --surface:#141d2e;
+    --surface-2:#1a2539;
+    --text:#e7ecf5;
+    --muted:#9ba9c0;
+    --border:#2a3850;
+    --accent:#77adff;
+    --accent-strong:#9cc4ff;
+    --accent-soft:#1b2c4c;
+    --on-accent:#0c1320;
+    --danger:#ff9a8f;
+    --danger-soft:#3b2222;
+    --water:#4c9dff;
+    --glass:#6b7d99;
+    --glass-bg:#0e1626;
+    --shadow:none;
+  }
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:28px 16px 72px}
+.top{margin-bottom:20px}
+.eyebrow{margin:0;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+h1{margin:4px 0 0;font-size:clamp(26px,5vw,34px);line-height:1.15;letter-spacing:-.01em}
+h2{margin:0 0 6px;font-size:18px;line-height:1.3}
+p{margin:0 0 12px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-top:16px;box-shadow:var(--shadow)}
+.card>:last-child{margin-bottom:0}
+.statement{font-size:17px}
+.sub,.how{color:var(--muted);font-size:15px}
+.label{display:block;margin:0 0 6px;font-size:14px;font-weight:600}
+.gap{margin-top:14px}
+textarea{display:block;width:100%;min-height:40px;padding:8px 10px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font:inherit;line-height:1.5;resize:vertical}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 16px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--surface-2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
+.btn.danger{color:var(--danger)}
+.btn.danger:hover{background:var(--danger-soft)}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.btn:disabled:hover{background:var(--surface)}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
+.msg{min-height:22px;margin:10px 0 0;font-size:14px;color:var(--muted)}
+.msg.warn{color:var(--danger)}
+.row .msg{min-height:0;margin:0}
+.empty{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+.work{display:grid;gap:0 16px}
+.jugs{display:flex;justify-content:center;align-items:flex-end;gap:clamp(4px,4vw,32px);margin-top:10px}
+.jug{appearance:none;display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 10px 10px;border:2px solid transparent;border-radius:14px;background:none;color:inherit;font:inherit;cursor:pointer}
+.jug:hover{background:var(--surface-2)}
+.picking .jug{border-style:dashed;border-color:var(--border)}
+.jug[aria-pressed=true]{border-style:solid;border-color:var(--accent);background:var(--accent-soft)}
+.glass{position:relative;box-sizing:content-box;display:block;width:clamp(60px,16vw,92px);border:3px solid var(--glass);border-top:0;border-radius:0 0 16px 16px;background:var(--glass-bg);overflow:hidden}
+.glass.g8{height:208px}
+.glass.g5{height:130px}
+.glass.g3{height:78px}
+.water{position:absolute;left:0;right:0;bottom:0;height:0;background:var(--water);transition:height .45s ease}
+.jug-name{margin-top:8px;font-weight:700}
+.jug-amount{color:var(--muted);font-size:14px}
+.jug-amount b{color:var(--text);font-size:18px;font-variant-numeric:tabular-nums}
+.stats{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.stat{flex:1 1 160px;margin:0;padding:10px 12px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2)}
+.stat span{display:block;color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.stat b{font-size:20px;font-variant-numeric:tabular-nums}
+.history{max-height:310px;margin:6px 0 0;padding:0;overflow:auto;list-style:none;font-size:15px}
+.history li{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;padding:6px 2px;border-bottom:1px solid var(--border)}
+.history .n{min-width:22px;color:var(--muted);font-variant-numeric:tabular-nums}
+.history .after{margin-left:auto;font-weight:700;font-variant-numeric:tabular-nums}
+
+.out{margin-top:16px}
+.out .row{margin-top:14px}
+#solution{background:var(--surface-2);font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+.steps{margin:14px 0 0;padding-left:22px;color:var(--muted);font-size:14px}
+.steps li{margin:3px 0}
+kbd{padding:1px 6px;border:1px solid var(--border);border-bottom-width:2px;border-radius:6px;background:var(--surface-2);color:var(--text);font:inherit;font-size:12px;font-weight:600}
+.note{margin:10px 0 0;color:var(--muted);font-size:14px}
+
+@media (min-width:780px){
+  .work{grid-template-columns:minmax(0,3fr) minmax(0,2fr)}
+}
+@media (max-width:640px){
+  .card{padding:16px}
+  .jug{padding:10px 6px 8px}
+}
+@media (prefers-reduced-motion:reduce){
+  .water{transition:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">LEIA activity</p>
+    <h1>Three jugs</h1>
+  </header>
+
+  <noscript><p class="card">This page needs JavaScript to work.</p></noscript>
+
+  <section class="card" aria-labelledby="problem-h">
+    <h2 id="problem-h">Problem</h2>
+    <p class="statement">You are given three jugs: a jug filled with 8 units of water, and two empty jugs of size 5 and 3. Pour the water so that the first and the second jug both contain 4 units, and the third is empty. The jugs have no markings: in one pour you can only pour until the source jug is empty or the destination jug is full.</p>
+    <p class="how">Work out the sequence of pours with the jugs below. Every pour you make is written down for you. When you are done, generate the solution text at the bottom of the page and paste it into the solution editor of the workbench. Your tutor can help you think through the problem in the workbench chat.</p>
+  </section>
+
+  <div class="work">
+    <section class="card" aria-labelledby="jugs-h">
+      <h2 id="jugs-h">Jugs</h2>
+      <p class="sub">Click the jug you want to pour from, then the jug you want to pour into.</p>
+      <div id="jugs" class="jugs">
+        <button type="button" class="jug" aria-pressed="false">
+          <span class="glass g8"><span class="water"></span></span>
+          <span class="jug-name">8-jug</span>
+          <span class="jug-amount"><b class="units">8</b> <span class="unit-word">units</span></span>
+        </button>
+        <button type="button" class="jug" aria-pressed="false">
+          <span class="glass g5"><span class="water"></span></span>
+          <span class="jug-name">5-jug</span>
+          <span class="jug-amount"><b class="units">0</b> <span class="unit-word">units</span></span>
+        </button>
+        <button type="button" class="jug" aria-pressed="false">
+          <span class="glass g3"><span class="water"></span></span>
+          <span class="jug-name">3-jug</span>
+          <span class="jug-amount"><b class="units">0</b> <span class="unit-word">units</span></span>
+        </button>
+      </div>
+      <p id="pour-msg" class="msg" role="status" aria-live="polite"></p>
+      <div class="stats">
+        <p class="stat"><span>State (8-jug, 5-jug, 3-jug)</span><b id="state">(8, 0, 0)</b></p>
+        <p class="stat"><span>Goal</span><b>(4, 4, 0)</b></p>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="hist-h">
+      <h2 id="hist-h">Your pours</h2>
+      <p id="hist-empty" class="empty">No pours yet.</p>
+      <ol id="history" class="history"></ol>
+      <div id="hist-actions" class="row gap">
+        <button type="button" class="btn" id="undo">Undo last pour</button>
+        <button type="button" class="btn danger" id="reset">Start over</button>
+      </div>
+      <div id="reset-confirm" class="row gap" hidden>
+        <span>Start over and clear your pours?</span>
+        <button type="button" class="btn danger" id="reset-yes">Yes, start over</button>
+        <button type="button" class="btn" id="reset-no">Cancel</button>
+      </div>
+    </section>
+  </div>
+
+  <section class="card" aria-labelledby="out-h">
+    <h2 id="out-h">Solution text</h2>
+    <p class="sub">When you are done, generate the text for the solution editor of the workbench. You can do it at any time, even if you have not finished.</p>
+    <button type="button" class="btn primary" id="generate">Generate solution text</button>
+    <div id="output" class="out" hidden>
+      <label class="label" for="solution">Text for the workbench editor</label>
+      <textarea id="solution" rows="4" readonly spellcheck="false" autocomplete="off"></textarea>
+      <div class="row">
+        <button type="button" class="btn primary" id="copy">Copy text</button>
+        <span id="copy-status" class="msg" role="status" aria-live="polite"></span>
+      </div>
+      <ol class="steps">
+        <li>Press <strong>Copy text</strong>.</li>
+        <li>In the workbench editor, select everything with <kbd>Ctrl</kbd> + <kbd>A</kbd> (<kbd>Cmd</kbd> + <kbd>A</kbd> on a Mac).</li>
+        <li>Paste with <kbd>Ctrl</kbd> + <kbd>V</kbd> (<kbd>Cmd</kbd> + <kbd>V</kbd> on a Mac), so that this text replaces the template.</li>
+      </ol>
+      <p class="note">This text follows your work: if you pour again, copy it again. Keep this tab open until you have sent your solution.</p>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var KEY = 'leia-activities:puzzles/water-jugs:v1';
+  var CAP = [8, 5, 3];
+  var NAME = ['8-jug', '5-jug', '3-jug'];
+  var START = [8, 0, 0];
+  var COPIED = 'Copied. Now paste it into the workbench editor.';
+
+  function $(id) { return document.getElementById(id); }
+
+  var jugsEl = $('jugs');
+  var jugBtns = Array.prototype.slice.call(jugsEl.querySelectorAll('.jug'));
+  var pourMsg = $('pour-msg');
+  var stateEl = $('state');
+  var historyEl = $('history');
+  var histEmpty = $('hist-empty');
+  var histActions = $('hist-actions');
+  var undoBtn = $('undo');
+  var resetBtn = $('reset');
+  var resetAsk = $('reset-confirm');
+  var genBtn = $('generate');
+  var outBox = $('output');
+  var outEl = $('solution');
+  var copyBtn = $('copy');
+  var copyMsg = $('copy-status');
+
+  var pours = [];      // each pour is [from, to], as positions in CAP
+  var picked = null;   // position of the jug chosen to pour from
+  var shown = false;   // whether the solution text is on screen
+  var copied = null;   // text placed on the clipboard by the last successful copy
+
+  function tuple(amounts) {
+    return '(' + amounts.join(', ') + ')';
+  }
+
+  function say(node, text, warn) {
+    node.textContent = text;
+    node.classList.toggle('warn', !!warn);
+  }
+
+  function part(cls, text) {
+    var node = document.createElement('span');
+    if (cls) node.className = cls;
+    node.textContent = text;
+    return node;
+  }
+
+  // Replays every pour from the start and returns the amounts after each one.
+  function replay() {
+    var cur = START.slice();
+    return pours.map(function (p) {
+      var moved = Math.min(cur[p[0]], CAP[p[1]] - cur[p[1]]);
+      cur[p[0]] -= moved;
+      cur[p[1]] += moved;
+      return cur.slice();
+    });
+  }
+
+  /* ---------- text for the editor ---------- */
+
+  function buildText() {
+    var states = replay();
+    var lines = ['State as (8-jug, 5-jug, 3-jug). Start: ' + tuple(START)];
+    pours.forEach(function (p, i) {
+      lines.push('Pour ' + (i + 1) + ': from ' + NAME[p[0]] + ' to ' + NAME[p[1]] + ' -> ' + tuple(states[i]));
+    });
+    lines.push('Final: ' + tuple(states.length ? states[states.length - 1] : START));
+    return lines.join('\n');
+  }
+
+  /* ---------- storage (this tab only) ---------- */
+
+  function save() {
+    try {
+      sessionStorage.setItem(KEY, JSON.stringify({ v: 1, pours: pours, shown: shown }));
+    } catch (e) { /* storage not available: the page still works */ }
+  }
+
+  function isJug(n) {
+    return n === 0 || n === 1 || n === 2;
+  }
+
+  function load() {
+    var data = null;
+    try { data = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (e) { data = null; }
+    if (!data || typeof data !== 'object') return;
+    shown = data.shown === true;
+    if (!Array.isArray(data.pours)) return;
+    var cur = START.slice();
+    for (var i = 0; i < data.pours.length; i++) {
+      var p = data.pours[i];
+      if (!Array.isArray(p) || p.length !== 2 || !isJug(p[0]) || !isJug(p[1]) || p[0] === p[1]) break;
+      var moved = Math.min(cur[p[0]], CAP[p[1]] - cur[p[1]]);
+      if (moved === 0) break;
+      cur[p[0]] -= moved;
+      cur[p[1]] += moved;
+      pours.push([p[0], p[1]]);
+    }
+  }
+
+  /* ---------- rendering ---------- */
+
+  function syncOutput() {
+    if (!shown) return;
+    var text = buildText();
+    outEl.value = text;
+    outEl.style.height = 'auto';
+    outEl.style.height = Math.min(outEl.scrollHeight + 2, 480) + 'px';
+    if (copied !== null) {
+      if (text === copied) say(copyMsg, COPIED);
+      else say(copyMsg, 'Your pours changed since you last copied. Copy again before you paste.', true);
+    }
+  }
+
+  function render() {
+    var states = replay();
+    var cur = states.length ? states[states.length - 1] : START;
+    jugBtns.forEach(function (btn, i) {
+      btn.querySelector('.water').style.height = (cur[i] / CAP[i] * 100) + '%';
+      btn.querySelector('.units').textContent = String(cur[i]);
+      btn.querySelector('.unit-word').textContent = cur[i] === 1 ? 'unit' : 'units';
+      btn.setAttribute('aria-label', NAME[i] + ', ' + cur[i] + (cur[i] === 1 ? ' unit' : ' units'));
+      btn.setAttribute('aria-pressed', picked === i ? 'true' : 'false');
+    });
+    jugsEl.classList.toggle('picking', picked !== null);
+    stateEl.textContent = tuple(cur);
+
+    historyEl.textContent = '';
+    pours.forEach(function (p, i) {
+      var li = document.createElement('li');
+      li.appendChild(part('n', (i + 1) + '. '));
+      li.appendChild(part('', 'from ' + NAME[p[0]] + ' to ' + NAME[p[1]] + ' '));
+      li.appendChild(part('after', tuple(states[i])));
+      historyEl.appendChild(li);
+    });
+    historyEl.scrollTop = historyEl.scrollHeight;
+    histEmpty.hidden = pours.length > 0;
+    undoBtn.disabled = pours.length === 0;
+    resetBtn.disabled = pours.length === 0;
+
+    outBox.hidden = !shown;
+    genBtn.hidden = shown;
+    syncOutput();
+  }
+
+  function changed() {
+    save();
+    render();
+  }
+
+  /* ---------- pouring ---------- */
+
+  function pick(i) {
+    var states = replay();
+    var cur = states.length ? states[states.length - 1] : START;
+
+    if (picked === null) {
+      if (cur[i] === 0) {
+        say(pourMsg, 'The ' + NAME[i] + ' is empty, so there is nothing to pour from it.');
+        return;
+      }
+      picked = i;
+      say(pourMsg, 'Pouring from the ' + NAME[i] + '. Click the jug to pour into, or click the ' + NAME[i] + ' again to cancel.');
+      render();
+      return;
+    }
+
+    if (picked === i) {
+      picked = null;
+      say(pourMsg, 'Cancelled.');
+      render();
+      return;
+    }
+
+    var from = picked;
+    picked = null;
+    if (cur[from] === 0) {
+      say(pourMsg, 'The ' + NAME[from] + ' is empty, so there is nothing to pour from it.');
+      render();
+      return;
+    }
+    if (cur[i] === CAP[i]) {
+      say(pourMsg, 'The ' + NAME[i] + ' is already full, so nothing moves.');
+      render();
+      return;
+    }
+    pours.push([from, i]);
+    say(pourMsg, 'Poured from the ' + NAME[from] + ' into the ' + NAME[i] + '.');
+    changed();
+  }
+
+  jugBtns.forEach(function (btn, i) {
+    btn.addEventListener('click', function () { pick(i); });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape' || picked === null) return;
+    picked = null;
+    say(pourMsg, 'Cancelled.');
+    render();
+  });
+
+  /* ---------- undo and start over ---------- */
+
+  function askReset(open) {
+    resetAsk.hidden = !open;
+    histActions.hidden = open;
+  }
+
+  undoBtn.addEventListener('click', function () {
+    if (!pours.length) return;
+    pours.pop();
+    picked = null;
+    say(pourMsg, 'Undid pour ' + (pours.length + 1) + '.');
+    changed();
+    if (!pours.length) jugBtns[0].focus();
+  });
+
+  resetBtn.addEventListener('click', function () {
+    askReset(true);
+    $('reset-no').focus();
+  });
+
+  $('reset-no').addEventListener('click', function () {
+    askReset(false);
+    resetBtn.focus();
+  });
+
+  $('reset-yes').addEventListener('click', function () {
+    pours = [];
+    picked = null;
+    shown = false;
+    copied = null;
+    try { sessionStorage.removeItem(KEY); } catch (e) { /* nothing to remove */ }
+    say(pourMsg, 'Started over.');
+    say(copyMsg, '');
+    askReset(false);
+    render();
+    jugBtns[0].focus();
+  });
+
+  /* ---------- solution text ---------- */
+
+  genBtn.addEventListener('click', function () {
+    shown = true;
+    changed();
+    copyBtn.focus();
+  });
+
+  copyBtn.addEventListener('click', function () {
+    var text = buildText();
+    outEl.value = text;
+
+    function selectAll() {
+      outEl.focus();
+      outEl.select();
+    }
+
+    function legacy() {
+      var ok = false;
+      selectAll();
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      if (ok) copyBtn.focus();
+      return ok;
+    }
+
+    function finish(ok) {
+      if (ok) {
+        copied = text;
+        say(copyMsg, COPIED);
+      } else {
+        copied = null;
+        selectAll();
+        say(copyMsg, 'Could not copy automatically. The text is selected: press Ctrl + C (Cmd + C on a Mac).', true);
+      }
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { finish(true); }, function () { finish(legacy()); });
+    } else {
+      finish(legacy());
+    }
+  });
+
+  // Browsers only show the leave warning once the page has been used.
+  function wasUsed() {
+    var activation = navigator.userActivation;
+    return !activation || activation.hasBeenActive;
+  }
+
+  window.addEventListener('beforeunload', function (e) {
+    if (!wasUsed() || !pours.length) return;
+    e.preventDefault();
+    e.returnValue = '';
+  });
+
+  window.addEventListener('resize', syncOutput);
+
+  load();
+  render();
+})();
+</script>
+</body>
+</html>
