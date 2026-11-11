@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Worksheet for the census riddle: note the ages you are considering, keep track of the ones you rule out and generate the text for the workbench solution editor.">
+<title>The census riddle | LEIA activity</title>
+<link rel="icon" href="data:,">
+<style>
+:root{
+  color-scheme:light dark;
+  --bg:#f3f5f9;
+  --surface:#ffffff;
+  --surface-2:#f5f7fb;
+  --text:#101828;
+  --muted:#586174;
+  --border:#d9dfe9;
+  --accent:#2563eb;
+  --accent-strong:#1d4ed8;
+  --accent-soft:#e7eefe;
+  --on-accent:#ffffff;
+  --danger:#b42318;
+  --danger-soft:#fdeceb;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(16,24,40,.05),0 10px 24px rgba(16,24,40,.05);
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#0c1320;
+    --surface:#141d2e;
+    --surface-2:#1a2539;
+    --text:#e7ecf5;
+    --muted:#9ba9c0;
+    --border:#2a3850;
+    --accent:#77adff;
+    --accent-strong:#9cc4ff;
+    --accent-soft:#1b2c4c;
+    --on-accent:#0c1320;
+    --danger:#ff9a8f;
+    --danger-soft:#3b2222;
+    --shadow:none;
+  }
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:28px 16px 72px}
+.top{margin-bottom:20px}
+.eyebrow{margin:0;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent)}
+h1{margin:4px 0 0;font-size:clamp(26px,5vw,34px);line-height:1.15;letter-spacing:-.01em}
+h2{margin:0 0 6px;font-size:18px;line-height:1.3}
+p{margin:0 0 12px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-top:16px;box-shadow:var(--shadow)}
+.card>:last-child{margin-bottom:0}
+.statement{font-size:17px}
+.sub,.how{color:var(--muted);font-size:15px}
+.label,.field label{display:block;margin:0 0 6px;font-size:14px;font-weight:600}
+.gap{margin-top:14px}
+input[type=text],textarea{width:100%;min-height:40px;padding:8px 10px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font:inherit}
+textarea{display:block;resize:vertical;line-height:1.5}
+input[type=text]::placeholder{color:var(--muted);opacity:1}
+input[aria-invalid=true]{border-color:var(--danger)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.btn{appearance:none;display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:8px 16px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font:inherit;font-size:15px;font-weight:600;cursor:pointer}
+.btn:hover{background:var(--surface-2)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent-strong);border-color:var(--accent-strong)}
+.btn.danger{color:var(--danger)}
+.btn.danger:hover{background:var(--danger-soft)}
+.link{appearance:none;padding:0;border:0;background:none;color:var(--accent);font:inherit;font-weight:600;text-decoration:underline;cursor:pointer}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
+.msg{min-height:22px;margin:10px 0 0;font-size:14px;color:var(--muted)}
+.msg.warn{color:var(--danger)}
+.row .msg{min-height:0;margin:0}
+.vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.add{display:grid;grid-template-columns:repeat(3,minmax(0,96px)) auto;justify-content:start;align-items:end;gap:10px}
+.add input,.ans input{text-align:center;font-variant-numeric:tabular-nums}
+table{width:100%;margin-top:6px;border-collapse:collapse;font-size:15px}
+th{padding:8px 10px;border-bottom:1px solid var(--border);color:var(--muted);font-size:12px;font-weight:700;letter-spacing:.06em;text-align:left;text-transform:uppercase;white-space:nowrap}
+td{padding:8px 10px;border-bottom:1px solid var(--border);vertical-align:middle}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+td.ages{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.out td.ages,tr.out td.num{color:var(--muted)}
+tr.out td.ages{text-decoration:line-through}
+td.why{width:40%}
+td.del{width:1%;text-align:right}
+.check{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;cursor:pointer}
+.check input{width:18px;height:18px;margin:0;accent-color:var(--accent)}
+.icon-btn{appearance:none;width:36px;height:36px;border:0;border-radius:9px;background:none;color:var(--muted);font:inherit;font-size:22px;line-height:1;cursor:pointer}
+.icon-btn:hover{background:var(--danger-soft);color:var(--danger)}
+.empty{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+.ans{display:flex;align-items:center;gap:8px}
+.ans input{width:72px}
+.ans span{color:var(--muted)}
+
+.out{margin-top:16px}
+.out .check{display:flex}
+.out .row{margin-top:14px}
+#solution{background:var(--surface-2);font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace}
+.steps{margin:14px 0 0;padding-left:22px;color:var(--muted);font-size:14px}
+.steps li{margin:3px 0}
+kbd{padding:1px 6px;border:1px solid var(--border);border-bottom-width:2px;border-radius:6px;background:var(--surface-2);color:var(--text);font:inherit;font-size:12px;font-weight:600}
+.note{margin:10px 0 0;color:var(--muted);font-size:14px}
+.reset{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;margin-top:24px;color:var(--muted);font-size:14px}
+
+@media (max-width:640px){
+  .card{padding:16px}
+  .add{grid-template-columns:repeat(3,minmax(0,1fr)) auto}
+  table,tbody,tr,td{display:block}
+  thead{display:none}
+  tr{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"ages ages del" "prod sum sum" "out out out" "why why why";align-items:center;gap:4px 16px;padding:10px 0;border-bottom:1px solid var(--border)}
+  td{padding:0;border:0}
+  td.ages{grid-area:ages;font-size:17px}
+  td.num{color:var(--muted);font-size:14px;text-align:left}
+  td.prod{grid-area:prod}
+  td.sum{grid-area:sum}
+  td.prod::before{content:"Product "}
+  td.sum::before{content:"Sum "}
+  td.out-cell{grid-area:out;padding:4px 0}
+  td.why{grid-area:why;width:auto}
+  td.del{grid-area:del;width:auto}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <p class="eyebrow">LEIA activity</p>
+    <h1>The census riddle</h1>
+  </header>
+
+  <noscript><p class="card">This page needs JavaScript to work.</p></noscript>
+
+  <section class="card" aria-labelledby="problem-h">
+    <h2 id="problem-h">Problem</h2>
+    <p class="statement">During a census, a man told the census taker that he had three children. The census taker asked their ages, and the man replied that the product of their ages was 36. The census taker said he needed to know each of their ages. The man said "The sum of their ages is the same as my house number." The census taker looked at the house number and complained, "I still can't tell their ages." The man said, "Oh, that's right, the oldest one taught the younger ones to play chess." The census taker wrote down the ages of the three children. What were the ages?</p>
+    <p class="how">Use this page as your worksheet: note down the ages you are considering, mark the ones you rule out and say why. Then write the three ages and a short explanation of how you ruled out the other possibilities. When you are done, generate the solution text at the bottom of the page and paste it into the solution editor of the workbench. Your tutor can help you reason in the workbench chat.</p>
+  </section>
+
+  <section class="card" aria-labelledby="cand-h">
+    <h2 id="cand-h">Candidate ages</h2>
+    <p class="sub">Type three ages and press Add. The page works out their product and their sum.</p>
+    <form id="add-form" class="add" autocomplete="off" novalidate>
+      <div class="field">
+        <label for="a1">Age 1</label>
+        <input id="a1" type="text" inputmode="numeric" maxlength="3" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="a2">Age 2</label>
+        <input id="a2" type="text" inputmode="numeric" maxlength="3" autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="a3">Age 3</label>
+        <input id="a3" type="text" inputmode="numeric" maxlength="3" autocomplete="off">
+      </div>
+      <button type="submit" class="btn primary">Add</button>
+    </form>
+    <p id="add-msg" class="msg" role="status" aria-live="polite"></p>
+    <table id="cand-table" hidden>
+      <thead>
+        <tr>
+          <th scope="col">Ages</th>
+          <th scope="col" class="num">Product</th>
+          <th scope="col" class="num">Sum</th>
+          <th scope="col">Status</th>
+          <th scope="col">Why</th>
+          <th scope="col"><span class="vh">Remove</span></th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <p id="empty" class="empty">Nothing added yet.</p>
+    <datalist id="reasons"></datalist>
+  </section>
+
+  <section class="card" aria-labelledby="ans-h">
+    <h2 id="ans-h">Your answer</h2>
+    <p class="label" id="ans-l">Ages</p>
+    <div class="ans" role="group" aria-labelledby="ans-l">
+      <input id="r1" type="text" inputmode="numeric" maxlength="3" autocomplete="off" aria-label="Age 1 of your answer">
+      <span aria-hidden="true">,</span>
+      <input id="r2" type="text" inputmode="numeric" maxlength="3" autocomplete="off" aria-label="Age 2 of your answer">
+      <span aria-hidden="true">,</span>
+      <input id="r3" type="text" inputmode="numeric" maxlength="3" autocomplete="off" aria-label="Age 3 of your answer">
+    </div>
+    <p id="ans-msg" class="msg" role="status" aria-live="polite"></p>
+    <label class="label" for="expl">Why these and not the other candidates</label>
+    <textarea id="expl" rows="5" maxlength="3000" autocomplete="off"></textarea>
+  </section>
+
+  <section class="card" aria-labelledby="out-h">
+    <h2 id="out-h">Solution text</h2>
+    <p class="sub">When you are done, generate the text for the solution editor of the workbench. You can do it at any time, even if you have not finished.</p>
+    <button type="button" class="btn primary" id="generate">Generate solution text</button>
+    <div id="output" class="out" hidden>
+      <label class="label" for="solution">Text for the workbench editor</label>
+      <textarea id="solution" rows="4" readonly spellcheck="false" autocomplete="off"></textarea>
+      <label class="check gap"><input type="checkbox" id="with-list" checked> <span>Include my candidate list</span></label>
+      <div class="row">
+        <button type="button" class="btn primary" id="copy">Copy text</button>
+        <span id="copy-status" class="msg" role="status" aria-live="polite"></span>
+      </div>
+      <ol class="steps">
+        <li>Press <strong>Copy text</strong>.</li>
+        <li>In the workbench editor, select everything with <kbd>Ctrl</kbd> + <kbd>A</kbd> (<kbd>Cmd</kbd> + <kbd>A</kbd> on a Mac).</li>
+        <li>Paste with <kbd>Ctrl</kbd> + <kbd>V</kbd> (<kbd>Cmd</kbd> + <kbd>V</kbd> on a Mac), so that this text replaces the template.</li>
+      </ol>
+      <p class="note">This text follows your work: if you change something above, copy it again. Keep this tab open until you have sent your solution.</p>
+    </div>
+  </section>
+
+  <div class="reset">
+    <button type="button" class="btn danger" id="clear">Clear everything</button>
+    <span id="clear-confirm" class="row" hidden>
+      <span>Clear all your work on this page?</span>
+      <button type="button" class="btn danger" id="clear-yes">Yes, clear it</button>
+      <button type="button" class="btn" id="clear-no">Cancel</button>
+    </span>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var KEY = 'leia-activities:puzzles/census-ages:v1';
+  var AGE = /^\d{1,3}$/;
+  var FORMAT = 'Each box needs a whole number from 0 to 999.';
+  var COPIED = 'Copied. Now paste it into the workbench editor.';
+
+  function $(id) { return document.getElementById(id); }
+
+  var addForm = $('add-form');
+  var addInputs = [$('a1'), $('a2'), $('a3')];
+  var addMsg = $('add-msg');
+  var tableEl = $('cand-table');
+  var rowsEl = $('rows');
+  var emptyEl = $('empty');
+  var reasonsEl = $('reasons');
+  var ansInputs = [$('r1'), $('r2'), $('r3')];
+  var ansMsg = $('ans-msg');
+  var explEl = $('expl');
+  var genBtn = $('generate');
+  var outBox = $('output');
+  var outEl = $('solution');
+  var listEl = $('with-list');
+  var copyBtn = $('copy');
+  var copyMsg = $('copy-status');
+  var clearBtn = $('clear');
+  var clearAsk = $('clear-confirm');
+
+  var state = blank();
+  var nextId = 1;
+  var removed = null;   // last removed row, kept for a one-step undo
+  var copied = null;    // text placed on the clipboard by the last successful copy
+
+  function blank() {
+    return { rows: [], answer: ['', '', ''], expl: '', withList: true, shown: false };
+  }
+
+  function parseAge(value) {
+    var s = String(value).trim();
+    return AGE.test(s) ? Number(s) : null;
+  }
+
+  function tuple(ages) {
+    return '(' + ages.join(', ') + ')';
+  }
+
+  function el(tag, cls, text) {
+    var node = document.createElement(tag);
+    if (cls) node.className = cls;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function say(node, text, warn) {
+    node.textContent = text;
+    node.classList.toggle('warn', !!warn);
+  }
+
+  /* ---------- text for the editor ---------- */
+
+  function tidy(text) {
+    return text.replace(/\r\n?/g, '\n').split('\n').map(function (l) {
+      return l.replace(/\s+$/, '');
+    }).join('\n').trim();
+  }
+
+  function buildText() {
+    var slots = state.answer.map(function (s) {
+      var n = parseAge(s);
+      return n === null ? '__' : String(n);
+    });
+    var lines = ['Ages: ' + slots.join(', '), 'Why these and not the other candidates:'];
+    var expl = tidy(state.expl);
+    if (expl) lines.push(expl);
+    if (state.withList && state.rows.length) {
+      lines.push('', 'Candidates I listed:');
+      state.rows.forEach(function (row, i) {
+        var a = row.ages;
+        var why = row.why.replace(/\s+/g, ' ').trim();
+        lines.push((i + 1) + '. ' + tuple(a) + ' -> product ' + (a[0] * a[1] * a[2]) +
+          ', sum ' + (a[0] + a[1] + a[2]) + ' - ' + (row.out ? 'ruled out' : 'not ruled out') +
+          (why ? ': ' + why : ''));
+      });
+    }
+    return lines.join('\n');
+  }
+
+  /* ---------- storage (this tab only) ---------- */
+
+  function save() {
+    try {
+      sessionStorage.setItem(KEY, JSON.stringify({
+        v: 1,
+        rows: state.rows.map(function (r) { return { ages: r.ages, out: r.out, why: r.why }; }),
+        answer: state.answer,
+        expl: state.expl,
+        withList: state.withList,
+        shown: state.shown
+      }));
+    } catch (e) { /* storage not available: the page still works */ }
+  }
+
+  function load() {
+    var data = null;
+    try { data = JSON.parse(sessionStorage.getItem(KEY) || 'null'); } catch (e) { data = null; }
+    if (!data || typeof data !== 'object') return;
+    if (Array.isArray(data.rows)) {
+      data.rows.forEach(function (r) {
+        if (!r || !Array.isArray(r.ages) || r.ages.length !== 3) return;
+        var ages = r.ages.map(parseAge);
+        if (ages.indexOf(null) !== -1) return;
+        state.rows.push({
+          id: nextId++,
+          ages: ages,
+          out: r.out === true,
+          why: typeof r.why === 'string' ? r.why.slice(0, 200) : ''
+        });
+      });
+    }
+    if (Array.isArray(data.answer) && data.answer.length === 3) {
+      state.answer = data.answer.map(function (s) { return typeof s === 'string' ? s.slice(0, 3) : ''; });
+    }
+    if (typeof data.expl === 'string') state.expl = data.expl.slice(0, 3000);
+    state.withList = data.withList !== false;
+    state.shown = data.shown === true;
+  }
+
+  function hasWork() {
+    return state.rows.length > 0 || state.expl.trim() !== '' ||
+      state.answer.some(function (s) { return s.trim() !== ''; });
+  }
+
+  /* ---------- rendering ---------- */
+
+  function renderReasons() {
+    var seen = Object.create(null);
+    reasonsEl.textContent = '';
+    state.rows.forEach(function (row) {
+      var why = row.why.trim();
+      if (!why || seen[why]) return;
+      seen[why] = true;
+      var option = document.createElement('option');
+      option.value = why;
+      reasonsEl.appendChild(option);
+    });
+  }
+
+  // Rows are rebuilt only when one is added or removed, so typing never loses focus.
+  function renderRows() {
+    rowsEl.textContent = '';
+    state.rows.forEach(function (row) {
+      var a = row.ages;
+      var name = tuple(a);
+      var tr = el('tr', row.out ? 'out' : '');
+      tr.setAttribute('data-id', String(row.id));
+      tr.appendChild(el('td', 'ages', name));
+      tr.appendChild(el('td', 'num prod', String(a[0] * a[1] * a[2])));
+      tr.appendChild(el('td', 'num sum', String(a[0] + a[1] + a[2])));
+
+      var outCell = el('td', 'out-cell');
+      var check = el('label', 'check');
+      var box = el('input');
+      box.type = 'checkbox';
+      box.checked = row.out;
+      box.setAttribute('data-role', 'out');
+      box.setAttribute('aria-label', 'Ruled out: ' + name);
+      check.appendChild(box);
+      check.appendChild(el('span', '', 'Ruled out'));
+      outCell.appendChild(check);
+      tr.appendChild(outCell);
+
+      var whyCell = el('td', 'why');
+      var why = el('input');
+      why.type = 'text';
+      why.value = row.why;
+      why.maxLength = 200;
+      why.placeholder = 'Why (optional)';
+      why.setAttribute('autocomplete', 'off');
+      why.setAttribute('list', 'reasons');
+      why.setAttribute('data-role', 'why');
+      why.setAttribute('aria-label', 'Why, for ' + name);
+      whyCell.appendChild(why);
+      tr.appendChild(whyCell);
+
+      var delCell = el('td', 'del');
+      var del = el('button', 'icon-btn', String.fromCharCode(215));
+      del.type = 'button';
+      del.setAttribute('data-role', 'del');
+      del.setAttribute('aria-label', 'Remove ' + name);
+      delCell.appendChild(del);
+      tr.appendChild(delCell);
+
+      rowsEl.appendChild(tr);
+    });
+    tableEl.hidden = state.rows.length === 0;
+    emptyEl.hidden = state.rows.length !== 0;
+    renderReasons();
+  }
+
+  function markAnswer() {
+    var bad = false;
+    ansInputs.forEach(function (input) {
+      var v = input.value.trim();
+      if (v !== '' && parseAge(v) === null) {
+        input.setAttribute('aria-invalid', 'true');
+        bad = true;
+      } else {
+        input.removeAttribute('aria-invalid');
+      }
+    });
+    say(ansMsg, bad ? FORMAT : '', bad);
+  }
+
+  function syncOutput() {
+    if (!state.shown) return;
+    var text = buildText();
+    outEl.value = text;
+    outEl.style.height = 'auto';
+    outEl.style.height = Math.min(outEl.scrollHeight + 2, 480) + 'px';
+    if (copied !== null) {
+      if (text === copied) say(copyMsg, COPIED);
+      else say(copyMsg, 'Your work changed since you last copied. Copy again before you paste.', true);
+    }
+  }
+
+  function renderAll() {
+    ansInputs.forEach(function (input, i) { input.value = state.answer[i]; });
+    explEl.value = state.expl;
+    listEl.checked = state.withList;
+    outBox.hidden = !state.shown;
+    genBtn.hidden = state.shown;
+    markAnswer();
+    renderRows();
+    syncOutput();
+  }
+
+  function changed() {
+    save();
+    syncOutput();
+  }
+
+  /* ---------- candidate list ---------- */
+
+  function find(node) {
+    var tr = node.closest('tr');
+    if (!tr) return null;
+    var id = Number(tr.getAttribute('data-id'));
+    for (var i = 0; i < state.rows.length; i++) {
+      if (state.rows[i].id === id) return { row: state.rows[i], index: i, tr: tr };
+    }
+    return null;
+  }
+
+  addForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var ages = addInputs.map(function (input) { return parseAge(input.value); });
+    var bad = ages.indexOf(null);
+    if (bad !== -1) {
+      say(addMsg, FORMAT, true);
+      addInputs[bad].focus();
+      return;
+    }
+    state.rows.push({ id: nextId++, ages: ages, out: false, why: '' });
+    removed = null;
+    addInputs.forEach(function (input) { input.value = ''; });
+    say(addMsg, '');
+    renderRows();
+    changed();
+    addInputs[0].focus();
+  });
+
+  rowsEl.addEventListener('change', function (e) {
+    var role = e.target.getAttribute('data-role');
+    var hit = find(e.target);
+    if (!hit) return;
+    if (role === 'out') {
+      hit.row.out = e.target.checked;
+      hit.tr.className = hit.row.out ? 'out' : '';
+      changed();
+    } else if (role === 'why') {
+      renderReasons();
+    }
+  });
+
+  rowsEl.addEventListener('input', function (e) {
+    if (e.target.getAttribute('data-role') !== 'why') return;
+    var hit = find(e.target);
+    if (!hit) return;
+    hit.row.why = e.target.value;
+    changed();
+  });
+
+  rowsEl.addEventListener('click', function (e) {
+    var btn = e.target.closest('[data-role="del"]');
+    if (!btn) return;
+    var hit = find(btn);
+    if (!hit) return;
+    state.rows.splice(hit.index, 1);
+    removed = { row: hit.row, index: hit.index };
+    renderRows();
+    changed();
+    say(addMsg, 'Removed ' + tuple(hit.row.ages) + '. ');
+    var undo = el('button', 'link', 'Undo');
+    undo.type = 'button';
+    undo.setAttribute('data-role', 'undo');
+    addMsg.appendChild(undo);
+    undo.focus();
+  });
+
+  addMsg.addEventListener('click', function (e) {
+    if (e.target.getAttribute('data-role') !== 'undo' || !removed) return;
+    state.rows.splice(Math.min(removed.index, state.rows.length), 0, removed.row);
+    removed = null;
+    say(addMsg, '');
+    renderRows();
+    changed();
+    addInputs[0].focus();
+  });
+
+  /* ---------- answer ---------- */
+
+  ansInputs.forEach(function (input, i) {
+    input.addEventListener('input', function () {
+      state.answer[i] = input.value;
+      markAnswer();
+      changed();
+    });
+  });
+
+  explEl.addEventListener('input', function () {
+    state.expl = explEl.value;
+    changed();
+  });
+
+  /* ---------- solution text ---------- */
+
+  genBtn.addEventListener('click', function () {
+    state.shown = true;
+    outBox.hidden = false;
+    genBtn.hidden = true;
+    changed();
+    copyBtn.focus();
+  });
+
+  listEl.addEventListener('change', function () {
+    state.withList = listEl.checked;
+    changed();
+  });
+
+  copyBtn.addEventListener('click', function () {
+    var text = buildText();
+    outEl.value = text;
+
+    function selectAll() {
+      outEl.focus();
+      outEl.select();
+    }
+
+    function legacy() {
+      var ok = false;
+      selectAll();
+      try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+      if (ok) copyBtn.focus();
+      return ok;
+    }
+
+    function finish(ok) {
+      if (ok) {
+        copied = text;
+        say(copyMsg, COPIED);
+      } else {
+        copied = null;
+        selectAll();
+        say(copyMsg, 'Could not copy automatically. The text is selected: press Ctrl + C (Cmd + C on a Mac).', true);
+      }
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { finish(true); }, function () { finish(legacy()); });
+    } else {
+      finish(legacy());
+    }
+  });
+
+  /* ---------- clear everything ---------- */
+
+  function askClear(open) {
+    clearAsk.hidden = !open;
+    clearBtn.hidden = open;
+  }
+
+  clearBtn.addEventListener('click', function () {
+    askClear(true);
+    $('clear-no').focus();
+  });
+
+  $('clear-no').addEventListener('click', function () {
+    askClear(false);
+    clearBtn.focus();
+  });
+
+  $('clear-yes').addEventListener('click', function () {
+    state = blank();
+    removed = null;
+    copied = null;
+    try { sessionStorage.removeItem(KEY); } catch (e) { /* nothing to remove */ }
+    addInputs.forEach(function (input) { input.value = ''; });
+    say(addMsg, '');
+    say(copyMsg, '');
+    askClear(false);
+    renderAll();
+    addInputs[0].focus();
+  });
+
+  // Browsers only show the leave warning once the page has been used.
+  function wasUsed() {
+    var activation = navigator.userActivation;
+    return !activation || activation.hasBeenActive;
+  }
+
+  window.addEventListener('beforeunload', function (e) {
+    if (!wasUsed() || !hasWork()) return;
+    e.preventDefault();
+    e.returnValue = '';
+  });
+
+  window.addEventListener('resize', syncOutput);
+
+  load();
+  renderAll();
+})();
+</script>
+</body>
+</html>
